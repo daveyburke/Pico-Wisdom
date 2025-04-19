@@ -20,6 +20,10 @@ from utime import sleep
 """
 
 phrases = [
+    ["The early bird catches the worm. But who's thinking about the worm?", "Dylan Burke"],
+    ["You're never too old to learn, Gagga.", "Dylan Burke"],
+    ["About longevity: You should also think about researching ways of extending peoples' perception of time.", "Dylan Burke"],
+    ["Can we go on holidays more with our friends? That's what I like the most.", "Dylan Burke"],
     ["The important thing is not to stop questioning.", "Albert Einstein"],
     ["Energy and persistence conquer all things.", "Benjamin Franklin"],
     ["Genius is one percent inspiration, ninety-nine percent perspiration.", "Thomas Edison"],
