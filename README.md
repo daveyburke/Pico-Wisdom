@@ -1,7 +1,9 @@
-# Pico-Wisdom
-Displays wise phrases and their authors upon button press. Designed to be part of an informational picture frame with super long battery life (years)
+# Pico Wisdom
+Displays wise phrases and their authors upon button press. Super long battery life (years).
 Built with a Pico W (although Wi-Fi not used) and an e-ink display. Runs off 3xAA through a Pololu push button circuit. Uses a slimmed down, optimized
-version (fewer flickers) of Peter Hinch's micropython-nano-gui for graphics. 
+version (fewer flickers) of Peter Hinch's micropython-nano-gui for graphics. Prototype shown below, designed to be part of an informational picture frame.
+
+<img src="Front.jpg" width=500/> <img src="Inside.jpg" width=300/>
 
 ## Parts list
 - Raspberry Pi Pico W (although Wi-Fi not currently used) - https://www.raspberrypi.com/products/raspberry-pi-pico/
@@ -11,14 +13,14 @@ version (fewer flickers) of Peter Hinch's micropython-nano-gui for graphics.
 - Passive piezo buzzer CYT1008 - https://www.amazon.com/dp/B01NCOXB2Q?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_1
 - 3xAA battery holder - https://www.amazon.com/dp/B0B3YFPB53/ref=sr_1_3?crid=V98JT7CMVI0G
 
-## Wiring diagram
+## Schematic
 Powered by 3xAA batteries through the Pololu 2808. User presses button wired to Pololu which powers up Pico. A beep is played and a new phrase is selected on boot, different to the last. The Pico will then signal to the Pololu via GPIO 1 to power off.
 
 <img src="Schematic.jpg"/>
 
 ## Installation
-Firmware: Install UF2 file by holding down BOOTSEL on Pico, connect USB to computer, then drag file on to mounted Pico drive in Finder/Explorer.
-Python code: Install Thonny on desktop/laptop. View->Files and drag all the files (except UF2) on to Pico via Thonny.
+- Firmware: Install UF2 file by holding down BOOTSEL on Pico, connect USB to computer, then drag file on to mounted Pico drive in Finder/Explorer.
+- Python code: Install Thonny on desktop/laptop. View->Files and drag all the files (except UF2, JPG, README obvs) on to Pico via Thonny.
 
 ## Battery life estimate
 Assuming about 10 pushes a day, Pico doing ~40mA and display 24mW, that's about 8 years of battery life. Pololu circuit standby uses .01uA, which would equate to 34,000 years (batteries will degrade before then)! Recommend using lithium AA batteries for longest life. Display will add a "Low battery" when the batteries need changing. 
