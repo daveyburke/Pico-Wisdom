@@ -1,6 +1,7 @@
 # Pico-Wisdom
 Displays wise phrases and their authors upon button press. Designed to be part of an informational picture frame with super long battery life (years)
-Built with a Pico W (although Wi-Fi not used) and an e-ink display. Runs off 3xAA through a Pololu push button circuit. 
+Built with a Pico W (although Wi-Fi not used) and an e-ink display. Runs off 3xAA through a Pololu push button circuit. Uses a slimmed down, optimized
+version (fewer flickers) of Peter Hinch's micropython-nano-gui for graphics. 
 
 ## Parts list
 - Raspberry Pi Pico W (although Wi-Fi not currently used) - https://www.raspberrypi.com/products/raspberry-pi-pico/
@@ -14,6 +15,10 @@ Built with a Pico W (although Wi-Fi not used) and an e-ink display. Runs off 3xA
 Powered by 3xAA batteries through the Pololu 2808. User presses button wired to Pololu which powers up Pico. A beep is played and a new phrase is selected on boot, different to the last. The Pico will then signal to the Pololu via GPIO 1 to power off.
 
 <img src="Schematic.jpg"/>
+
+## Installation
+Firmware: Install UF2 file by holding down BOOTSEL on Pico, connect USB to computer, then drag file on to mounted Pico drive in Finder/Explorer.
+Python code: Install Thonny on desktop/laptop. View->Files and drag all the files (except UF2) on to Pico via Thonny.
 
 ## Battery life estimate
 Assuming about 10 pushes a day, Pico doing ~40mA and display 24mW, that's about 8 years of battery life. Pololu circuit standby uses .01uA, which would equate to 34,000 years (batteries will degrade before then)! Recommend using lithium AA batteries for longest life. Display will add a "Low battery" when the batteries need changing. 
