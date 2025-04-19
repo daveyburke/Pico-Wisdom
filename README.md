@@ -16,7 +16,7 @@ version (fewer flickers) of Peter Hinch's micropython-nano-gui for graphics. Pro
 ## Schematic
 Powered by 3xAA batteries through the Pololu 2808. User presses button wired to Pololu which powers up Pico. A beep is played and a new phrase is selected on boot, different to the last. The Pico will then signal to the Pololu via GPIO 1 to power off.
 
-<img src="Schematic.jpg"/>
+<img src="Schematic.jpg?"/>
 
 ## Installation
 - Firmware: Install UF2 file by holding down BOOTSEL on Pico, connect USB to computer, then drag file on to mounted Pico drive in Finder/Explorer.
