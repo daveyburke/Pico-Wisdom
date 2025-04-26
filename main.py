@@ -43,7 +43,7 @@ phrases = [
     ["What we think, we become.", "Buddha"],
     ["Wisdom begins in wonder.", "Socrates"],
     ["The only true wisdom is in knowing you know nothing.", "Socrates"],
-    ["I think, therefore I am.", "René Descartes"],
+    ["I think, therefore I am.", "Rene Descartes"],
     ["Small deeds done are better than great deeds planned.", "Peter Marshall"],
     ["The expert in anything was once a beginner.", "Helen Hayes"],
     ["Do what you can, with what you have, where you are.", "Theodore Roosevelt"],
