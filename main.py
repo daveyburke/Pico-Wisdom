@@ -10,7 +10,7 @@ from utime import sleep
     Pololu which powers up Pico. A new phrase is selected on boot, different to the
     last. The Pico will then signal to the Pololu to power off.
     
-    Assuming about 10 pushes a day, Pico doing ~40mA and display 24mW, that's about 8
+    Assuming about 10 presses a day, Pico doing ~40mA and display 24mW, that's about 8
     years of battery life. Pololu circuit standby uses .01uA, which would equate to
     34,000 years (batteries will degrade before then)! Display will add a "Low battery"
     when the batteries need changing. Uses a slimmed down, optimized version (fewer
@@ -20,14 +20,8 @@ from utime import sleep
 """
 
 phrases = [
-    ["The early bird catches the worm. But who's thinking about the worm?", "Dylan Burke"],
-    ["You're never too old to learn, Gagga.", "Dylan Burke"],
-    ["About longevity: You should also think about researching ways of extending peoples' perception of time.", "Dylan Burke"],
-    ["Can we go on holidays more with our friends? That's what I like the most.", "Dylan Burke"],
     ["The important thing is not to stop questioning.", "Albert Einstein"],
-    ["Energy and persistence conquer all things.", "Benjamin Franklin"],
     ["Genius is one percent inspiration, ninety-nine percent perspiration.", "Thomas Edison"],
-    ["An investment in knowledge pays the best interest.", "Benjamin Franklin"],
     ["It does not matter how slowly you go as long as you do not stop.", "Confucius"],
     ["Our greatest glory is not in never falling, but in rising up every time we fall.", "Confucius"],
     ["The journey of a thousand miles begins with a single step.", "Lao Tzu"],
@@ -55,9 +49,33 @@ phrases = [
     ["The best way to predict the future is to create it.", "Peter Drucker"],
     ["None of us is as smart as all of us.", "Ken Blanchard"],
     ["Be silly, be honest, be kind.", "Ralph Waldo Emerson"],
+
+    # Irish
     ["Mistakes are the portals of discovery.", "James Joyce"],
     ["If we winter this one out, we can summer anywhere.", "Seamus Heaney"],
-    ["Life isn't about finding yourself. Life is about creating yourself.", "George Bernard Shaw"]
+    ["Life isn't about finding yourself. Life is about creating yourself.", "George Bernard Shaw"],
+    ["Be yourself; everyone else is already taken.", "Oscar Wilde"],
+
+    # Dylan's quotes
+    ["The early bird catches the worm. But who's thinking about the worm?", "Dylan Burke"],
+    ["You're never too old to learn, Gagga.", "Dylan Burke"],
+    ["About longevity: You should also think about researching ways of extending peoples' perception of time.", "Dylan Burke"],
+    ["Can we go on holidays more with our friends? That's what I like the most.", "Dylan Burke"],
+
+    # Bruce Lee
+    ["The key to immortality is first living a life worth remembering.", "Bruce Lee"],
+    ["Knowledge will give you power, but character respect.", "Bruce Lee"],
+    ["Be like water, my friend.", "Bruce Lee"],
+
+    # Synapse School changemakers
+    ["An investment in knowledge pays the best interest.", "Benjamin Franklin"],
+    ["Energy and persistence conquer all things.", "Benjamin Franklin"],
+    ["Life is architecture and architecture is the mirror of life.", "I.M. Pei"],
+    ["\"Si, se puede\" (Yes, it is possible).", "Dolores Huerta"],
+    ["3 ways to ultimate success: The 1st way is to be kind. The 2nd way is to be kind. The 3rd way is to be kind.", "Fred Rogers"],
+    ["Fight for the things that you care about, but do it in a way that will lead others to join you.", "Ruth Bader Ginsburg"],
+    ["Don't raise your voice, improve your argument.", "Desmond Tutu"],
+    ["People look at us as the label of our disability. And it is a part of who we are, but it is not who we are.", "Judy Heumann"]
 ]
 
 LAST_INDEX_FILENAME = "last_index.txt"  # ensure different phrase with each boot
