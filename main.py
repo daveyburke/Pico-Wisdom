@@ -79,7 +79,7 @@ phrases = [
 ]
 
 LAST_INDEX_FILENAME = "last_index.txt"  # ensure different phrase with each boot
-CRITICAL_VOLTAGE = 3.25
+CRITICAL_VOLTAGE = 4.2  # assumes Energizer Lithium AA x 3 (discharge knee ~1.4v @ 10mA)
 
 go_asleep_pin = Pin(1, Pin.OUT, value=0)  # GPIO 1 connected to OFF pin on Pololu
 buzzer = PWM(Pin(5))  # passive piezo buzzer connected to GPIO 5 and GND
