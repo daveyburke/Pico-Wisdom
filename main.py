@@ -1,4 +1,4 @@
-from machine import Pin, ADC, PWM
+from machine import Pin, ADC, PWM, Timer
 from utime import sleep
 
 """
@@ -83,6 +83,7 @@ CRITICAL_VOLTAGE = 4.2  # assumes Energizer Lithium AA x 3 (discharge knee ~1.4v
 
 go_asleep_pin = Pin(1, Pin.OUT, value=0)  # GPIO 1 connected to OFF pin on Pololu
 buzzer = PWM(Pin(5))  # passive piezo buzzer connected to GPIO 5 and GND
+watchdog_timer = Timer()  # watchdog to prevent Pico staying powered on if a problem with peripherals
 
 def store_last_index(index):
     with open(LAST_INDEX_FILENAME, 'w') as file:
@@ -122,7 +123,12 @@ def play_beep():
     sleep(0.15)
     buzzer.duty_u16(0)
 
+def watchdog_callback(t):
+    print("Woof - forcing power down")
+    go_asleep_pin.on()
+
 if __name__=='__main__':
+    watchdog_timer.init(period=10000, mode=Timer.ONE_SHOT, callback=watchdog_callback)
     play_beep()
     turn_wifi_off()
     
@@ -154,6 +160,7 @@ if __name__=='__main__':
         
     # Refresh display, then signal Pololu to power us down
     ssd.show()
+    watchdog_timer.deinit()
     go_asleep_pin.on()
     
     
