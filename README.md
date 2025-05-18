@@ -12,9 +12,10 @@ version (fewer flickers) of Peter Hinch's micropython-nano-gui for graphics. Pro
 - Push button - [Link](https://www.amazon.com/dp/B08SKJ6V7Z?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_1)
 - Passive piezo buzzer CYT1008 - [Link](https://www.amazon.com/dp/B01NCOXB2Q?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_1)
 - 3x AA battery holder - [Link](https://www.amazon.com/dp/B0B3YFPB53/ref=sr_1_3?crid=V98JT7CMVI0G)
+- Energizer Lithium AA batteries for longer (leak free!) life
 
 ## Schematic
-Powered by 3xAA batteries through the Pololu 2808. User presses button wired to Pololu which powers up Pico. A beep is played and a new phrase is selected on boot, different to the last. The Pico will then signal to the Pololu via GPIO 1 to power off.
+Powered by 3xAA batteries through the Pololu 2808. User presses a button wired to Pololu which powers up Pico. A beep is played and a new phrase is selected on boot, different to the last. The Pico will then signal to the Pololu via GPIO 1 to power off. Note that the Waveshare display is powered by the 3.3v output from the Pico (else the voltage will be too high, especially if using 3x Lithium AA batteries which have a nominal voltage of 1.8V). A software watchdog provides an additional safeguard so that the Pico never gets stuck on for a long time.
 
 <img src="Schematic.jpg"/>
 
