@@ -84,7 +84,6 @@ CRITICAL_VOLTAGE = 4.2  # assumes Energizer Lithium AA x 3 (discharge knee ~1.4v
 go_asleep_pin = Pin(1, Pin.OUT, value=0)  # GPIO 1 connected to OFF pin on Pololu
 buzzer = PWM(Pin(5))  # passive piezo buzzer connected to GPIO 5 and GND
 watchdog_timer = Timer()  # watchdog to prevent Pico staying powered on if a problem with peripherals
-y_offset = -14  # optional offset UI in y direction
 
 def store_last_index(index):
     with open(LAST_INDEX_FILENAME, 'w') as file:
@@ -146,10 +145,10 @@ if __name__=='__main__':
     phrase, author = get_phrase_and_author()
     writer = CWriter(ssd, arial35, verbose=False)
     writer.set_clip(True, True, False)
-    Textbox(writer, 60 + y_offset, 15, 370, 5, clip=False).append(phrase + " ")
+    Textbox(writer, 46, 15, 370, 5, clip=False).append(phrase + " ")
     writer = CWriter(ssd, courier20, verbose=False)
     writer.set_clip(True, True, False)
-    Label(writer, 240 + y_offset, 15, '-' + author)
+    Label(writer, 232, 15, '-' + author)
     
     # (Maybe) low battery label
     vsys = measure_vsys()
@@ -157,7 +156,7 @@ if __name__=='__main__':
         import gui.fonts.arial10 as arial10
         writer = CWriter(ssd, arial10, verbose=False)
         writer.set_clip(True, True, False)
-        Label(writer, 260 + y_offset, 326, 'Low battery')
+        Label(writer, 250, 326, 'Low battery')
         
     # Refresh display, then signal Pololu to power us down
     ssd.show()
