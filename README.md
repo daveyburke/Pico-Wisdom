@@ -24,4 +24,9 @@ Powered by 3xAA batteries through the Pololu 2808. User presses a button wired t
 - Python code: Install Thonny on desktop/laptop. View->Files and drag all the files (except UF2, JPG, README obvs) on to Pico via Thonny.
 
 ## Battery life estimate
-Assuming about 10 pushes a day, Pico doing ~40mA and display 24mW, that's about 8 years of battery life. Pololu circuit standby uses .01uA, which would equate to 34,000 years (batteries will degrade before then)! Recommend using lithium AA batteries for longest life. Display will add a "Low battery" when the batteries need changing. 
+Pololu circuit standby uses .01uA, which equates to 34,000 years, i.e. negligible. Recommend using Energizer lithium AA batteries for longest shelf life of 25 years, with no leaks.
+
+Button push runs Pico for about 6s at a measured 23mA => 0.038mAh / push. Capacity of Energizer lithium AA batteries is 3000mAh at 25mA draw => capacity for 3000 / 0.038 = 78947 presses. Assume 10 presses per day => 7895 days => ~21 years (standby current can be ignored).
+
+Display will show a "Low battery" when the batteries need changing. 
+
